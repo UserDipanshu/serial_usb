@@ -3,15 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
 	const dataContainer = document.getElementById("dataContainer");
 	const ReversedString = document.getElementById("reversed");
 
-    
 	connectButton.addEventListener("click", initSerial);
-    
+
 	async function initSerial() {
-        try {
-            // Request serial port access
+		try {
+			// Request serial port access
 			const port = await navigator.serial.requestPort();
-            alert("alert on : ports"+port)
-            
+
 			// Open the port with a specific baud rate
 			await port.open({ baudRate: 9600 });
 
